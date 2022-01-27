@@ -1,4 +1,7 @@
 let currentQuestion = 0;
+
+let rightQuestions = 0;
+
 let questions = [
     {
         "question": "Wer hat HTML erfunden?",
@@ -48,6 +51,17 @@ function init() {
 }
 
 function showQuestion() {
+
+    if(currentQuestion >= questions.length){
+        document.getElementById('endScreen').style = '';
+        document.getElementById('questionBody').style = 'display: none';
+
+        document.getElementById('amount-of-questions').innerHTML = questions.length;
+
+        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
+    } else {
+
+
     let question = questions[currentQuestion];
 
     document.getElementById('questiontext').innerHTML = question['question'];
@@ -55,6 +69,9 @@ function showQuestion() {
     document.getElementById('answer_2').innerHTML = question['answer_2'];
     document.getElementById('answer_3').innerHTML = question['answer_3'];
     document.getElementById('answer_4').innerHTML = question['answer_4'];
+
+    document.getElementById('question-number').innerHTML = currentQuestion + 1;
+    }
 }
 
 function answer(selection) {
@@ -70,6 +87,7 @@ function answer(selection) {
     if(selectedQuestionNumber == question['right_answer']){
         console.log('Richtige Antwort!!');
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightQuestions++;
     }else{
         console.log('Falsche Antwort!!');
         document.getElementById(selection).parentNode.classList.add('bg-danger');

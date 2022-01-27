@@ -32,3 +32,11 @@ body{
 .bg-success, .bg-danger{
     color:white;
 }
+
+.width-100{
+    display: flex;
+    justify-content: flex-end;
+}
+.text-center{
+    text-align: center;
+}
