@@ -37,16 +37,23 @@
       <img src="Quizapp/brainbg.jpg" class="card-img-top" id="header-image">
 
       <div class="progress">
-        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" >25%</div>
+        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;">25%</div>
       </div>
 
       <div class="card-body" id="endScreen" style="display: none;">
         <div class="text-center"> Quiz beendet! </div>
         <div class="width-100"><img src="/Quizapp/tropy.png"></div>
 
+        <div class="button-row">
+          <button onclick="restartGame()" class="btn btn-primary" >Erneut Spielen</button>
+        </div>
+
         <div class="text-center"> Du hast <b id="amount-of-right-questions">XXX</b> von <b
             id="amount-of-questions">XXX</b> Fragen richtig beantwortet</div>
       </div>
+
+
+      
 
       <div class="card-body" id="questionBody">
         <h5 class="card-title" id="questiontext">Frage</h5>
