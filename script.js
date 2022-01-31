@@ -1,6 +1,8 @@
 let currentQuestion = 0;
-
 let rightQuestions = 0;
+
+let Audio_SUCCESS = new Audio('Quizapp/Audio/Succes_Sound.mp3');
+let Audio_FAIL = new Audio('Quizapp/Audio/Fail_Sound.mp3');
 
 let questions = [
     {
@@ -92,11 +94,13 @@ function answer(selection) {
     if (selectedQuestionNumber == question['right_answer']) {
         console.log('Richtige Antwort!!');
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        Audio_SUCCESS.play();
         rightQuestions++;
     } else {
         console.log('Falsche Antwort!!');
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        Audio_FAIL.play();
     }
     document.getElementById('next-button').disabled = false;
 }
